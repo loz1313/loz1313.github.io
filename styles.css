@@ -196,3 +196,15 @@ dt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#CFC7BB;
 .working{padding:5rem 0}.faq{padding-top:4.5rem;padding-bottom:4.5rem}
 .t-four .t-card{min-height:0}
 @media (max-width:860px){.working{padding:4rem 0}.t-feature{padding-bottom:3.5rem}}
+/* v13: services higher, three testimonials (consulting featured) */
+.consulting .consult-lead{margin:0 0 1rem;max-width:30em}
+.consulting .service-para{margin-top:0}
+.working{background:var(--soft)}
+.t-grid.t-three{grid-template-columns:1fr 1fr}
+.t-three .t-card,.t-three .t-card:nth-child(4){grid-column:auto;min-height:0}
+.t-three .t-featured{grid-column:1/-1}
+.t-three .t-featured blockquote{font-size:clamp(1.3rem,2vw,1.6rem);max-width:46em}
+@media (max-width:860px){.t-grid.t-three{grid-template-columns:1fr}}
+.pair .service{border-bottom:0}.faq{border-top:0}
+.consulting .consult-lead{margin-bottom:1.25rem}
+@media (max-width:860px){.pair #writing{border-bottom:1px solid var(--line)}}
