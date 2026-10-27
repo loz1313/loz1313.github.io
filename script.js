@@ -15,12 +15,13 @@ if('IntersectionObserver' in window&&!reduce){
  els.forEach(el=>io.observe(el));
 }else els.forEach(el=>el.classList.add('in'));
 const f=document.getElementById('contact-form'),s=document.getElementById('form-status'),sb=f.querySelector('button[type=submit]');
-// Netlify Forms: urlencoded POST to "/" (form-name hidden field identifies the form).
+// Web3Forms: JSON POST to the form's action URL.
 f.addEventListener('submit',async e=>{e.preventDefault();
  if(!f.checkValidity()){s.textContent='Please fill in your name, a valid email and a message.';f.querySelector(':invalid').focus();return}
  sb.disabled=true;s.textContent='Sending…';
- try{const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()});
-  if(!r.ok)throw new Error(r.status);
+ try{const r=await fetch(f.action,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok||j.success===false)throw new Error(r.status);
   s.textContent='Thank you, your message has been sent. I’ll be in touch soon.';f.reset();
  }catch(err){s.textContent='Sorry, something went wrong and your message wasn’t sent. Please try again shortly.'}
  finally{sb.disabled=false}

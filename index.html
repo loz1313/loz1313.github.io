@@ -224,14 +224,12 @@
    </address>
    <p class="form-pointer"><a class="link" href="#contact-form">Or send a message using the form</a></p>
   </div>
-  <!--
-   Netlify Forms: detected at deploy via data-netlify="true" (form name "contact").
-   script.js submits it with fetch (urlencoded POST to "/"); without JS it posts normally and Netlify shows its default thank-you page.
-   Field names: form-name, company (honeypot), name, email, interest, message.
-  -->
-  <form class="reveal" id="contact-form" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="company" novalidate>
-   <input type="hidden" name="form-name" value="contact">
-   <p class="hp" aria-hidden="true"><label>Leave blank <input name="company" tabindex="-1" autocomplete="off"></label></p>
+  <!-- Form handled by Web3Forms (public access key); submissions are emailed to the site owner. Honeypot: botcheck. -->
+  <form class="reveal" id="contact-form" name="contact" method="POST" action="https://api.web3forms.com/submit" novalidate>
+   <input type="hidden" name="access_key" value="af8274c9-f745-416a-9054-194081ebc57e">
+   <input type="hidden" name="subject" value="New enquiry from laurenmcgilp.com">
+   <input type="hidden" name="from_name" value="laurenmcgilp.com">
+   <p class="hp" aria-hidden="true"><label>Leave blank <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></p>
    <label for="name">Name</label><input id="name" name="name" autocomplete="name" required>
    <label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required>
    <label for="interest">I’m interested in</label>
