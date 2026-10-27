@@ -207,7 +207,7 @@ dt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#CFC7BB;
 @media (max-width:860px){.t-grid.t-three{grid-template-columns:1fr}}
 .pair .service{border-bottom:0}.faq{border-top:0}
 .consulting .consult-lead{margin-bottom:1.25rem}
-@media (max-width:860px){.pair #writing{border-bottom:1px solid var(--line)}}
+@media (max-width:860px){.pair .service:first-child{border-bottom:1px solid var(--line)}}
 /* v14: bigger hero, numbers band, pull-quote, refined motion */
 :root{--ease:cubic-bezier(.22,.61,.36,1)}
 /* Reveal states only hide content when JS is running */
