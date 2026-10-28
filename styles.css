@@ -44,7 +44,7 @@ figure{margin:0}figcaption,.placeholder{font-size:.85rem;color:var(--accent);fon
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
 form{display:flex;flex-direction:column}
 label{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin:1rem 0 .4rem}
-input,select,textarea{font:inherit;background:transparent;color:var(--bg);border:0;border-bottom:1px solid #6B645B;padding:.6rem 0}
+input,select,textarea{font:inherit;background:transparent;color:var(--bg);border:0;border-bottom:1px solid #7A7268;padding:.6rem 0}
 select option{color:var(--ink)}
 input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:#E9C9A8;box-shadow:0 1px 0 #E9C9A8}
 form .btn{margin-top:2rem;background:var(--bg);color:var(--ink);align-self:flex-start}form .btn:hover{background:#E9C9A8}
@@ -186,6 +186,8 @@ dt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#CFC7BB;
 .response-note{margin:1.75rem 0 0;font-size:.9rem;color:#CFC7BB}
 @media (min-width:1024px) and (max-width:1199px){nav ul{gap:1.4rem}}
 @media (max-width:1023px){.wt-grid{grid-template-columns:1fr;gap:2.5rem}}
+/* Approach: align headings, body and "Who I work best with" across columns on desktop */
+@media (min-width:1024px){@supports (grid-template-rows:subgrid){.wt-col{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;align-content:start}.wt-col .wt-fit{margin-top:0!important}}}
 @media (max-width:860px){
  .t-grid.t-four{grid-template-columns:1fr}
  .t-feature{padding-bottom:4rem}
@@ -268,5 +270,4 @@ dt{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:#CFC7BB;
 }
 .hero{min-height:min(calc(100vh - 72px),980px)}@media (max-width:860px){.hero{min-height:0}}
 
-.roles-note{margin-top:1rem;font-size:.95rem;line-height:1.6;color:inherit;opacity:.8}
 .roles-highlights{font-style:italic;opacity:1;color:#7A4E2D}
